@@ -1,18 +1,18 @@
-AWSTempleateformationversion: “2010-09-09”
-Description:  >
-  This template creates VPC in us-east-1 region
+AWSTemplateFormatVersion: "2010-09-09"
+Description: >
+  This template creates a VPC in the us-east-1 region
   Author: Shaik Nabeel
   Company: test
-Resources: 
-  MyCfnVPC:
-    Type:  AWS::EC2::vpc
-    Properties:
-      CidrBlock:  “10.0.0.0/16”
-      Tags:
-      -  Key: Name
-         Value: MyProdVPC
-      -  key: Env   
-         value: Prod
-      -  Key: Departement
-         Value: DevOps
 
+Resources:
+  MyCfnVPC:
+    Type: AWS::EC2::VPC
+    Properties:
+      CidrBlock: "10.0.0.0/16"
+      Tags:
+        - Key: Name
+          Value: MyProdVPC
+        - Key: Env
+          Value: Prod
+        - Key: Department
+          Value: DevOps
