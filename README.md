@@ -74,3 +74,11 @@ ls -a
 mkdir -p .github/workflows
 
 ```
+
+
+### For creating aws actions
+example : in our local terminal if we want lo connect aws we need cli in that 
+we will connect cli with this command by using access and secret access key
+```
+aws configure
+```
