@@ -1,12 +1,12 @@
-# vpc creation through github actions
-1. The below are the steps to create vpc through githubactions
-step1- create a directory under the root folder with the name 
-github/workflows.
-step2- create a yami file with the name githu-actions-demo.ymal withn the content
-```
 name: GitHub Actions Demo
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
-on: [push]
+on:
+  workflow_dispatch:
+    inputs:
+      my_input:
+        description: my input description
+        required: false
+        type: string
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
@@ -24,9 +24,9 @@ jobs:
       - run: echo "🍏 This job's status is ${{ job.status }}."
       - uses: aws-actions/configure-aws-credentials@v2
         with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: us-east-1
-      - run: aws ec2 create-vpc  --cidr-block 10.0.0.0/16  --tag-specifications 'ResourceType=vpc,Tags=[{Key=Name,Value=MyVpc}]'
-      - run: aws ec2 describe-vpcs
-```
+         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+         aws-region: us-east-1
+     - run: aws s3 ls
+     - run: aws ec2 create-vpc --cidr-block 10.0.0.0/16 --tag-specifications 'ResourceType=vpc,Tags=[{Key=Name,Value=MyVpc}]'
+     - run: aws ec2 describe-vpcs
