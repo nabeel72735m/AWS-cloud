@@ -9,9 +9,9 @@ Resources:
      Properties:
       CidrBlock:  “10.0.0.0/16”
       Tags:
-      -  Key: Name
-         Value: MyProdVPC
-      -  key: Env   
-         value: Prod
-      -  Key: Departement
-         Value: DevOps
+      - Key: Name
+        Value: MyProdVPC
+      - key: Env   
+        value: Prod
+      - Key: Departement
+        Value: DevOps
