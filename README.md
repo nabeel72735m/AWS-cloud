@@ -32,6 +32,7 @@ aws ec2 delete-vpc --vpc-id <vpc-id>
 
   i will be using the abouve command to create vpcs
   output:
+  ```
   {
     "Vpc": {
         "CidrBlock": "10.0.0.0/16",
@@ -59,3 +60,5 @@ aws ec2 delete-vpc --vpc-id <vpc-id>
         ]
     }
 }
+
+```
