@@ -62,3 +62,15 @@ aws ec2 delete-vpc --vpc-id <vpc-id>
 }
 
 ```
+
+
+### now i will create some github action
+to create github action we will be creating the file
+the command is 
+
+```
+pwd 
+ls -a 
+mkdir -p .github/workflows
+
+```
