@@ -8,10 +8,10 @@ Resources:
   MyCfnVPC:
     Type: AWS::EC2::VPC
     Properties:
-      CidrBlock: "10.0.0.0/16"
+      CidrBlock: "192.0.0.0/16"
       Tags:
         - Key: Name
-          Value: MyProdVPC
+          Value: MyownVPC
         - Key: Env
           Value: Prod
         - Key: Department
