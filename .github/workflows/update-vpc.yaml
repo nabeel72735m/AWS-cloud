@@ -1,4 +1,4 @@
-name: update cfn vpc github action
+name: update cfn vpc github action 2
 on:
   workflow_dispatch:
     inputs:
