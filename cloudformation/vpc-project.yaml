@@ -17,3 +17,59 @@ Resources:
       Tags:
         - Key: Name
           Value: Nabeel-InternetGateway
+          # Attach Internet Gateway to VPC
+  MyVPCGatewayAttachment:
+    Type: 'AWS::EC2::VPCGatewayAttachment'
+    Properties:
+      VpcId: vpc-0c3b194c7a8b292c7
+      InternetGatewayId: igw-0e4324bf13f4d68ec
+      # Public Subnet 1
+  PublicSubnet1:
+    Type: 'AWS::EC2::Subnet'
+    Properties:
+      VpcId: c
+      CidrBlock: '10.0.1.0/24'
+      MapPublicIpOnLaunch: 'true'
+      Tags:
+        - Key: Name
+          Value: PublicSubnet1
+# Public Subnet 2
+  PublicSubnet2:
+    Type: 'AWS::EC2::Subnet'
+    Properties:
+      VpcId: vpc-0c3b194c7a8b292c7
+      CidrBlock: '10.0.2.0/24'
+      MapPublicIpOnLaunch: 'true'
+      Tags:
+        - Key: Name
+          Value: PublicSubnet2
+          # Private Subnet 1
+  PrivateSubnet1:
+    Type: 'AWS::EC2::Subnet'
+    Properties:
+      VpcId: vpc-0c3b194c7a8b292c7
+      CidrBlock: '10.0.3.0/24'
+      Tags:
+        - Key: Name
+          Value: PrivateSubnet1
+          # Private Subnet 2
+  PrivateSubnet2:
+    Type: 'AWS::EC2::Subnet'
+    Properties:
+      VpcId: vpc-0c3b194c7a8b292c7
+      CidrBlock: '10.0.4.0/24'
+      Tags:
+        - Key: Name
+          Value: PrivateSubnet2
+           # Public Route Table
+  PublicRouteTable:
+    Type: 'AWS::EC2::RouteTable'
+    Properties:
+      VpcId: vpc-0c3b194c7a8b292c7
+      Tags:
+        - Key: Name
+          Value: PublicRouteTable
+
+
+
+
