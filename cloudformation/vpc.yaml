@@ -3,7 +3,7 @@ Description: >
   This template creates a VPC in the us-east-1 region
   Author: Shaik Nabeel
   Company: test
-
+  
 Resources:
   MyCfnVPC:
     Type: AWS::EC2::VPC
