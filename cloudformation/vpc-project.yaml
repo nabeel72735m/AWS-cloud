@@ -69,6 +69,13 @@ Resources:
       Tags:
         - Key: Name
           Value: PublicRouteTable
+          # Public Route
+  PublicRoute:
+    Type: 'AWS::EC2::Route'
+    Properties:
+      RouteTableId: rtb-003d9e7f6ac1ba981
+      DestinationCidrBlock: '0.0.0.0/0'
+      GatewayId: igw-0e4324bf13f4d68ec 
           # Associate Public Route Table with Public Subnet 1
   PublicSubnet1RouteTableAssociation:
     Type: 'AWS::EC2::SubnetRouteTableAssociation'
