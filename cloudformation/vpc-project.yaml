@@ -21,13 +21,13 @@ Resources:
   MyVPCGatewayAttachment:
     Type: 'AWS::EC2::VPCGatewayAttachment'
     Properties:
-      VpcId: vpc-0c3b194c7a8b292c7
+      VpcId: vpc-0a7b63d5b26578c6d
       InternetGatewayId: igw-0e4324bf13f4d68ec
       # Public Subnet 1
   PublicSubnet1:
     Type: 'AWS::EC2::Subnet'
     Properties:
-      VpcId: c
+      VpcId: vpc-0a7b63d5b26578c6d
       CidrBlock: '10.0.1.0/24'
       MapPublicIpOnLaunch: 'true'
       Tags:
@@ -37,7 +37,7 @@ Resources:
   PublicSubnet2:
     Type: 'AWS::EC2::Subnet'
     Properties:
-      VpcId: vpc-0c3b194c7a8b292c7
+      VpcId: vpc-0a7b63d5b26578c6d
       CidrBlock: '10.0.2.0/24'
       MapPublicIpOnLaunch: 'true'
       Tags:
@@ -47,7 +47,7 @@ Resources:
   PrivateSubnet1:
     Type: 'AWS::EC2::Subnet'
     Properties:
-      VpcId: vpc-0c3b194c7a8b292c7
+      VpcId: vpc-0a7b63d5b26578c6d
       CidrBlock: '10.0.3.0/24'
       Tags:
         - Key: Name
@@ -56,7 +56,7 @@ Resources:
   PrivateSubnet2:
     Type: 'AWS::EC2::Subnet'
     Properties:
-      VpcId: vpc-0c3b194c7a8b292c7
+      VpcId: vpc-0a7b63d5b26578c6d
       CidrBlock: '10.0.4.0/24'
       Tags:
         - Key: Name
@@ -65,7 +65,7 @@ Resources:
   PublicRouteTable:
     Type: 'AWS::EC2::RouteTable'
     Properties:
-      VpcId: vpc-0c3b194c7a8b292c7
+      VpcId: vpc-0a7b63d5b26578c6d
       Tags:
         - Key: Name
           Value: PublicRouteTable 
