@@ -68,7 +68,38 @@ Resources:
       VpcId: vpc-0a7b63d5b26578c6d
       Tags:
         - Key: Name
-          Value: PublicRouteTable 
+          Value: PublicRouteTable
+          # Associate Public Route Table with Public Subnet 1
+  PublicSubnet1RouteTableAssociation:
+    Type: 'AWS::EC2::SubnetRouteTableAssociation'
+    Properties:
+      SubnetId: subnet-0c70ff46c21a63656
+      RouteTableId: rtb-003d9e7f6ac1ba981
+
+
+  # Associate Public Route Table with Public Subnet 2
+  PublicSubnet2RouteTableAssociation:
+    Type: 'AWS::EC2::SubnetRouteTableAssociation'
+    Properties:
+      SubnetId: subnet-0dd824ffc507c3090
+      RouteTableId: rtb-003d9e7f6ac1ba981
+
+
+  # Private Route Table
+  PrivateRouteTable:
+    Type: 'AWS::EC2::RouteTable'
+    Properties:
+      VpcId: vpc-0a7b63d5b26578c6d
+      Tags:
+        - Key: Name
+          Value: PrivateRouteTable
+
+  # NAT Gateway EIP
+  NatEIP:
+    Type: 'AWS::EC2::EIP'
+    Properties:
+      Domain: vpc
+
 
 
 
