@@ -109,3 +109,16 @@ Resources:
       Tags:
         - Key: Name
           Value: NatGateway
+           # Private Route to NAT Gateway
+  PrivateRoute:
+    Type: 'AWS::EC2::Route'
+    Properties:
+      RouteTableId: rtb-0a867e2390f92c40d
+      DestinationCidrBlock: '0.0.0.0/0'
+      NatGatewayId: nat-024fe254232f5b484
+      # Associate Private Route Table with Private Subnet 2
+  PrivateSubnet2RouteTableAssociation:
+    Type: 'AWS::EC2::SubnetRouteTableAssociation'
+    Properties:
+      SubnetId: subnet-04de5f2e33c9a75a7
+      RouteTableId: rtb-0a867e2390f92c40d
